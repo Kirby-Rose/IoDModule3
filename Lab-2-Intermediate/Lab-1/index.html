@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript intermediate - Lab 1</title>
+</head>
+<body>
+    <div></div>
+
+
+    <script>
+        // Hazel's solution
+        // const capitalise = (s) => s.charAt(0).toUpperCase() + s.slice(1)
+        // const ucFirstLetters = (str) => {
+        // if (!str || typeof(str) !== 'string') return;
+        // return str
+        // .split(' ')
+        // .map((word) => capitalise(word)) // => = return
+        // .join(' ')
+        // }
+        
+        // Kirby's solution (helped by copilot - I've now turned off auto-complete)
+        const ucFirstLetters = (str) => {
+            if(str && typeof str == 'string') {
+                let words = str.split(' ');
+                let newWords = [];
+                words.forEach(word => {
+                    newWords.push(word.charAt(0).toUpperCase() + word.slice(1));
+                });
+                return newWords.join(' ');
+
+            }
+
+            console.log(ucFirstLetters("not passing valid perameter", str))
+        }
+
+        console.log(ucFirstLetters("los angeles") ) //Los Angeles
+        console.log(ucFirstLetters("short story, brief fictional prose narrative that is shorter than a novel and that usually deals with only a few characters") ) //Los Angeles
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 10</title>
+</head>
+<body>
+   <script>
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.human = true;
+        this.canDrive =  (this.age >= 21) ? true : false;
+        // this.canDrive = drivingAge(true, false);
+        }
+
+    var person1 = new Person("Lacey", 50);
+
+    var person2 = new Person("Kate", 40);
+
+  
+
+    class PersonClass {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+            this.human = true;
+            this.canDrive =  (this.age >= 21) ? true : false;
+
+        }
+            // this.canDrive = drivingAge(true, false);
+        // }
+        //     canDrive() {
+        //         return this.age >= 21 ? "old enough" : "too young";
+        //     }
+    
+    }
+
+    
+
+    // function drivingAge() {
+    //         if (this.age >= 21) {
+    //             this.canDrive = true;
+    //         } else {
+    //             this.canDrive = false;
+    //         }   
+    //     }
+    
+    var person3 = new PersonClass("Amy", 30);
+    var person4 = new PersonClass("Sophie", 20);
+    var person5 = new PersonClass("Beth", 10);
+
+   
+
+
+
+     console.log(person1);
+     console.log(person2);
+     console.log(person3);
+     console.log(person4);
+     console.log(person5);
+
+    //  console.log(`${person3.name} is ${person3.age} and is ${person3.canDrive()} to drive`);
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+    // function PersonClass(name, age) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.human = true;
+    // }
+
+    // var person3 = new PersonClass("Amy", 30);
+
+    // console.log(person3);
+
+
+
+   </script>
+</body>
+</html>

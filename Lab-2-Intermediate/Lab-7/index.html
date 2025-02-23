@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page for JavaScript</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+let books = [
+{ id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+{ id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+{ id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+{ id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+{ id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+{ id: 6, title: 'book 6', author: 'a person', year: 1980 },
+{ id: 7, title: 'book 7', author: 'Different person', year: 1981 },
+{ id: 8, title: 'book 8', author: 'Human', year: 1985 },
+{ id: 9, title: 'book 9', author: 'person', year: 1990 },
+{ id: 10, title: 'book 10', author: 'Not me', year: 1991 },
+];
+    const getBookTitle = (bookId, library) => {
+        if(bookId){
+            return books.find((book) => book.id === bookId);
+        }
+        return "Sorry - no books that match";
+    };
+
+    console.log("Matched book returned: ", getBookTitle(3))
+
+    const getOldBooks = (date) => {
+        if (date) {
+            return books.filter((book) => book.year <= date);
+        }
+        return "No books found"
+
+    }
+
+    console.log("matching books: ", getOldBooks(1950));
+
+    const getNewBooks = (date) => {
+        if(date) {
+            return books.filter((book) => book.year >= date);
+        }
+        return "Nope - dunno what your after, soz"
+    }
+
+    console.log("Books you wanted..:", getNewBooks(1980))
+    console.log("Books you wanted..:", getNewBooks(2000))
+
+    // finished B - up to C :)
+
+    const genre = "Genre: "
+
+    books = books.map(
+        (item)=> {
+            return {...item, Genre: "Classic"}
+            return {...item, genre: `${newGenre}`}
+    });
+
+    console.log(books)
+
+
+    // c - Copying Chrises to learn.. 
+
+    const addLanguage = () => {
+       return  books.map((book) => {
+           return {...book, language: "English"};
+        });
+
+    }
+
+    console.log("addLanguage", addLanguage());
+
+
+    // up to d
+    
+    const getTitles = (authorInitial, library) => {
+        // const author = 'F. Scott Fitzgerald'
+        // author.charAt(0)
+
+        if(authorInitial && library.length){
+            return library.filter((book) => book.author.toUpperCase()[0] === authorInitial.toUpperCase())
+            .map((book) => book.title); //other option
+            // return library.filter((book) => book.author.toUpperCase().startsWith(authorInitial.toUpperCase())); 
+            
+        }
+    };
+
+    console.log("Matched book returned: ", getTitles("A", books))
+
+
+    // e
+
+    // const latestBook = ()
+
+    
+   
+
+
+
+
+
+   
+   
+    // Kirbys test mess
+    // const modifiedBooks = books.map((item) => {
+    //     return Object.entries(item).map(([key, value]) => {
+    //         return [key, value];
+    //     });
+    //     const filteredBooks = books.filter(book => book.author.startsWith("A"));
+    //     console.log(filteredBooks);
+
+    // // const filteredBooks = books.filter(book => book.author.startsWith("A"));
+
+    // console.log(filteredBooks);
+
+    // // console.log(books.author())
+           
+    // // console.log(books("A"))
+
+     // Tates x2 -  To return book titles (no author initial)
+    // const bookTitles = () => {
+    //     return books.map((book) => book.title);
+    // };
+    // console.log(bookTitles());
+    
+    
+    // const bookTitles = () => books.map((book) => book.title);
+    // console.log(bookTitles());
+
+    </script>
+    </html>

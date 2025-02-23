@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Intermediate - Lab 10</title>
+</head>
+<body>
+    <h1>Welcome to Javascript Intermediate - Lab 10</h1>
+    <script>
+
+        const today = new Date();
+        console.log('Current time is ' + today.toLocaleTimeString())
+        console.log(today.getHours() + ' hours have passed so far today')
+
+        // a & b
+        console.log(today.getMinutes() + " minutes that have passed today") // this shows minutes passed this hour, not this day
+
+        // doesn't work.. see if i can make it... not neccessary
+        console.log(
+            today.getHours () * 60 * 60 + // what ever is on our clock face, hour
+            today.getMinutes() * 60 + // clock min
+            today. getSeconds() + + // clock sec
+            "seconds have passed today"
+        );
+
+
+        // c
+
+        const birthday = new Date("1986-10-02");
+        let years = today.getFullYear() - birthday.getFullYear();
+        let months = today.getMonth() - birthday.getMonth();
+        let days = today.getDate() - birthday.getDate();
+        if (days < 0) {
+            months--; //does the same thing as months = months - 1
+            days += birthday.getDate(); //prevent days being negative
+        }
+        if (months < 0) {
+            years -= 1; //if born in Nov and this month is Feb, take one off years
+            months += 12; //and add those months into here so it's not negative
+        }
+        console.log(`I am ${years} years, ${months} months and ${days} days old`);
+
+
+        // todays time stamp + 30 mins & + 90mins
+
+        // const now = new Date();
+
+        // const updatedTime = new Date(now.setHours(now.getHours() + 1));
+
+        // console.log("local time + 1 hour", updatedTime.toLocaleTimeString())
+
+
+
+        // const updatedMinutes = new Date(now.setMinutes(now.getMinutes() + 30));
+
+        // console.log("local time + 30 minutes", updatedMinutes.toLocaleTimeString())
+        
+        
+        // HOW DO I GET TODAYS TIME STAMP
+        
+        const now = new Date(); // 2025-02-15
+        // I WANT TO ADD 1 Hour to what ever that is and print
+        const updatedTime = new Date(now.setHours(now.getHours() + 1));
+        console.log(updatedTime.toLocaleTimeString());
+        // I WANT TO ADD ANOTHER AND 30 Min and print
+        const updatedMinutes = new Date(
+            now.setMinutes(now.getMinutes() + 30) // this is 30 mins past first updated time
+        ).toLocaleTimeString();
+        console.log("updated mintues", updatedMinutes);
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        // Class examples
+        // // const christmas = new Date("2025-12-25");
+        // // console.log("x-mas ", christmas)
+
+        // // const nyeLocal = new Date('2023-12-31 23:59:59')
+        // // console.log("NYE", nyeLocal)
+
+        // const nyeUTC = new Date('2023-12-31 23:59:59+09:30')
+        // console.log("NYE 2.0", nyeUTC)
+
+
+        // const boxingDay = new Date(2023, 11, 26) // month 11 is December, assumes local timezone
+        // console.log(boxingDay) // 2023-12-25T14:00:00.000Z - so hours are different in UTC
+        // const remembranceDay = new Date( 2023, 10, 11, 11, 11 ) // month 10 is November, assumes local timezone
+        // console.log(remembranceDay) // 2023-11-11T01:11:00.000Z - so hours are different in UTC
+        
+
+        // const christmas = new Date('2023-12-25') // assumes UTC timezone if time not included
+        // console.log( christmas.toLocaleDateString() ) // 25/12/2023 - dd/mm/yyyy if in Australia/NZ
+        // console.log( christmas.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) )
+        // // 2023. 12. 25. 오전 9:00:00 - both timezone and language are converted to Korean
+
+        // const nyeLocal = new Date('2023-12-31 23:59:59') // assumes local timezone if time is included
+        // console.log( nyeLocal.toLocaleString() ) // 31/12/2023, 11:59:59 pm - default to local TZ
+        
+        
+    </script>
+</body>
+</html>

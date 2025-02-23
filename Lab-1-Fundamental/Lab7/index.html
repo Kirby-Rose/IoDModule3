@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Seven</title>
+</head>
+
+
+<body>
+    <h1 id="count-score-half"></h1>
+    <h1 id="count-fouls-half"></h1>
+
+    <h1 id="count-score-full"></h1>
+    <h1 id="count-fouls-full"></h1>
+
+    <script> 
+
+        const basketballGame = {
+        score: 0,
+        foul: 0,
+
+        freeThrow() {
+        this.score++;
+        return this
+        },
+        basket() {
+        this.score += 2;
+        return this
+        },
+        threePointer() {
+        this.score += 3;
+        return this
+        },
+        penalty() {
+        this.foul++;
+        return this
+        },
+        halfTimeScore() {
+        console.log('Halftime score is '+this.score);
+        document.getElementById("count-score-half").innerText = `Half time score is ${this.score}`;
+        return this
+        },
+        halfTimeFouls() {
+        console.log('Halftime foul count '+this.foul);
+        document.getElementById("count-fouls-half").innerText = `Half time foul count is ${this.foul}`;
+        return this
+        },
+        fullTimeScore() {
+        console.log('Fulltime score is '+this.score);
+        document.getElementById("count-score-full").innerText = `Full time score is ${this.score}`;
+        return this
+        },
+        fullTimeFouls() {
+        console.log('Fulltime foul count '+this.foul);
+        document.getElementById("count-fouls-full").innerText = `Full time foul count ${this.foul}`;
+        return this
+        }}
+
+    //modify each of the above object methods to enable function chaining as below:,
+        
+        basketballGame
+        .basket()
+        .freeThrow()
+        .penalty()
+        .penalty()
+        .penalty()
+        .freeThrow()
+        .basket()
+        .threePointer()
+        .halfTimeScore()
+        .halfTimeFouls()
+        .basket()
+        .freeThrow()
+        .freeThrow()
+        .penalty()
+        .penalty()
+        .basket()
+        .threePointer()
+        .fullTimeScore()
+        .fullTimeFouls()
+    
+
+     
+    </script>
+</body>
+</html>

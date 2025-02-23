@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript intermediate - Lab 2</title>
+</head>
+<body>
+
+    <h1 id="box1"></h1>
+
+    <h1 id="box2"></h1>
+
+
+
+    <script> 
+
+   function truncate(str, max) {
+
+    if (str && typeof str == "string")
+    console.log('success', str)
+
+
+    if (str.length > max) {
+        return str.slice(0, max) + "...";
+    } else {
+        return str; 
+    }
+    
+   }
+
+   console.log(truncate('This text will be truncated if it is too long', 25))
+   // This text will be truncat...
+
+   console.log(truncate('This text will be truncated if it is too long', 50))
+
+   
+
+       
+    </script>
+</body>
+</html>

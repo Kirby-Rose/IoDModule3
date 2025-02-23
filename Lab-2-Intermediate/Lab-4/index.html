@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Intermediate - Lab 4</title>
+</head>
+<body>
+	<p>basic html page with JavaScript element</p>
+
+    <script>
+    
+    const camelCase = (cssProp) => {
+        if(cssProp && ["-"].includes(cssProp)) {
+            const splitString = cssProp.split('-');
+
+            return words
+            .map((word, index) => {
+                if (index === 0) {
+                    return word;
+                }
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            })
+
+            .join("");
+        }
+        return cssProp;
+            // let newWords = [];
+            // words.forEach(word => {
+            //     newWords.push(word.slice(indexOf[6]))
+            // })
+            // return newWords.join('');
+        };
+    
+
+    
+    
+    
+    //Chris
+    // const camelStringConverter = (cssProp) => {
+    //     if (cssProp && ["-"].includes(cssProp)) {
+    //         const splitStr = cssProp.split("-");
+            
+    //         return splitStr
+    //         .map((word, index) => {
+    //             if (index === 0) {
+    //                 return word; 
+    //             }
+    //             return word.charAt(0).toUpperCase() + word.slice(1);
+    //         })
+            
+    //         .join("");
+    //     }
+    //     return cssProp;
+    // };
+    
+    
+    // //Tims
+    // function camelCaseConverse(cssProp) {
+    //     let words = cssProp. split("-"); // Array
+    //     let camelStrg = '';
+        
+    //     words. forEach((prop) => {
+    //         console.log("works!")
+    //         if (camelStrg.length == 0) camelStrg = prop;
+    //         else camelStrg += prop. charAt(0) . toUpperCase() + prop. substring(1);
+            
+    //         return camelstrg;
+            
+    //         + word.slice(1);
+            
+    //     })
+    // }
+
+    
+    
+
+
+
+    // console.log(camelCase('margin-left')) // marginLeft
+    // // console.log(camelCase('background-image')) // backgroundImage
+    // // console.log(camelCase('display')) // display
+    </script>
+</body>
+</html>
+

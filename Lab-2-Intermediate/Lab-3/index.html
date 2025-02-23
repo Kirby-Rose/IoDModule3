@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOD Module 3 - Lab 3</title>
+</head>
+<body>
+    <h1>Welcome to IOD Module 3 - Lab 3</h1>
+   
+
+    <script>
+
+        const animals = ['Tiger', 'Giraffe', 'Emu']
+        const newAnimals =[...animals]
+        console.log(animals)
+
+        newAnimals.push('Rhino', 'Hippo');
+        console.log(newAnimals)
+
+        newAnimals.unshift('Meerkat', 'Lemur');
+        console.log(newAnimals)
+
+        //sort by abc
+
+        console.log(newAnimals.sort());
+      
+        const sortByData = (a, b) => {
+        if (a < b) {
+        return -1;
+        }
+        if (a > b) {
+        1;
+        }
+        return 0;
+        };
+
+        // newAnimals.push("Eagle");
+        // console.log(newAnimals)
+
+        function replaceMiddleAnimal(newValue) { 
+            // let animalsList3 = (...newAnimals)
+
+            // const animalsLength = animals.length
+            const isEven = Number.isInteger(newAnimals.length / 2);
+
+            if (isEven) {
+                return "Can't add a middle value";
+            } else {
+            let middleValue = newAnimals.length / 2;
+            return newAnimals.splice(middleValue, 1, newValue);
+            }
+        }
+
+        console.log(replaceMiddleAnimal("Cow"));
+
+        console.log(replaceMiddleAnimal("Sheep"));
+
+
+        function findMatchingAnimals(beginsWith) {
+            // var newAnimalData;
+            let newAnimalData = newAnimals.filter(animal => animal.startsWith(beginsWith)); 
+            return newAnimalData;
+        }
+
+        console.log(findMatchingAnimals('G'))
+
+        function findLetterMatch(content) {
+            let animalDataThree = newAnimals.filter(animal => animal.includes(content)); 
+            return animalDataThree;
+        }
+
+        console.log(findLetterMatch('o'))
+        console.log(findLetterMatch('e'))
+
+        function findLetterMatch2(content) {
+            let animalData4 = newAnimals.filter(animal => animal.toLowerCase().includes(content.toLowerCase()));
+            return animalData4;
+        }
+
+        console.log(findLetterMatch2('r'))
+        console.log(findLetterMatch2('e'))
+
+
+
+
+
+        // if (number % 2 == 0) {
+        //  console.log("The number is even");
+        // } else {
+        //  console.log("The number is odd");
+        // }
+
+
+            
+            
+            // let middleOfArray = newAnimals.length / 2;
+            // console.log(middleOfArray)
+            // return middleOfArray;
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

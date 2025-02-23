@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    
+<script>
+   let teamSports = ["Basketball", "Soccer", "Football", "Baseball", "Hockey"];
+   let moreSports = teamSports
+   moreSports.push("Netball")
+   moreSports.unshift("Soccer")
+    console.log(teamSports)
+
+
+    let dog1 = "Lucy";
+    let dog2 = dog1;
+    dog2 = "Max";
+    console.log(dog1);
+    console.log(dog2);
+
+   let cat1 = {name: "fluffy", breed: "Siberian"};
+   cat2 = cat1;
+    cat2.name = "Whiskers";
+    console.log(cat2);
+
+    const newTeamSports = [...teamSports];
+    newTeamSports.push("Rugby");
+    newTeamSports.unshift("Cricket");
+    console.log(newTeamSports);
+
+    const newCat = {...cat1};
+    newCat.name = "Bitsa";
+    newCat.breed = "Stray";
+    console.log(newCat);  
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

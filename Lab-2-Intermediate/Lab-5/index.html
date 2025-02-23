@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 Intermediate JavaScript Lab 5</title>
+</head>
+<body>
+    <h1>Welcome to Lab 2 Intermediate JavaScript Lab 5</h1>
+    <script>
+        let twentyCents = 0.20
+        let tenCents = 0.10
+        // console.log(`${twentyCents} + ${tenCents} = ${twentyCents + tenCents}`)
+        // // 0.2 + 0.1 = 0.30000000000000004
+
+        // console.log(fixedTwenty + fixedTen) //why is this not working?
+        
+        //A
+        function currencyAddition(float1 = 0, float2 = 0, operation) {
+            if(float1 && float2) {
+                let fixedOne = float1.toFixed(2);
+                let fixedTwo = float2.toFixed(2);
+                const summedValue = parseFloat(fixedOne) + parseFloat(fixedTwo);
+                const newValue = parseFloat(fixedOne) + parseFloat(fixedTwo);
+
+                return "$" + summedValue.toFixed(2);              
+            }
+
+            return float1 + float2;
+        }
+
+        
+        
+        // console.log("equals: ", currencyAddition(0.20, 0.50));
+
+        function currencyOperation(float1 = 0, float2 = 0, operation, numDecimals = 2) {
+            let usedDecimalPlace = 2;
+            if(numDecimals >= 1 && numDecimals <=10 )
+            usedDecimalPlace = numDecimals;
+
+            if(float1 && float2 && operation) {
+
+                let result = 0;
+                
+                switch (operation) {
+                case "+":
+                result = float1 + float2;
+                // console.log("plus");
+                break;
+                
+                case "-":
+                result = float1 - float2;
+                // console.log("minus");
+                break;
+                      
+                case "/":
+                result = float1 / float2;
+                // console.log("divide");
+                break;
+                
+                case "*":
+                result = float1 * float2;
+                // console.log("multiply");
+                break;
+                
+                default:
+                console.log(`an operation that isnt supported: `, 
+                    operation
+                );
+                            
+            }
+            
+            // return "$" + result.toFixed(2);              
+            //toFixed rounds decimal points. Must be cautious where this sits in calcs.
+            //numDecimals allw us to slect amount of decimal points and add the 4th value tot eh console.log 
+            return "$" + result.toFixed(usedDecimalPlace);   
+           
+        }
+                            
+                                
+        
+    }
+    
+    console.log(currencyOperation(20, 7, "-", 13))
+    console.log(currencyOperation(20, 7, "+", 4))
+    console.log(currencyOperation(20, 7, "/", 40))
+    console.log(currencyOperation(20, 7, "*", 5))
+    console.log(currencyOperation())
+
+
+
+
+
+
+        
+        
+        
+        
+        
+
+
+
+
+    </script>
+</body>
+</html></html>

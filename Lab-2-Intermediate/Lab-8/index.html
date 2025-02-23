@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Intermediate - Lab 8</title>
+</head>
+<body>
+    <h1>JavaScript Intermediate - Lab 8</h1>
+
+    <article id="Print-Q.d"></article>
+    <article id="Print-Q.d.2"></article>
+    <article id="Print-Q.f"></article>
+
+
+    <script>
+        // copied in code
+        const phoneBookABC = new Map() //an empty map to begin with
+        phoneBookABC.set('Annabelle', '0412312343')
+        phoneBookABC.set('Betty', '0433221117')
+        phoneBookABC.set('Caroline', '0455221182')
+
+        // 8 - a
+        const phoneBookDEF = new Map()
+        phoneBookDEF.set("Daphne", '0400000000')
+        phoneBookDEF.set('Eliza', '0401122333')
+        phoneBookDEF.set('Frankie', '040222555')
+
+
+        // 8 - b
+        const name = "Name: "
+        const phone = "Phone: "
+
+        const phoneBookDEFArray = Array.from(phoneBookDEF, ([key, value]) => ({ name: key, phone: value }));
+        const updatedPhoneBookDEF = phoneBookDEFArray.map(
+            (item) => {
+                return { ...item, name: `${name}${item.name}`, phone: `${phone}${item.phone}` };
+            }
+        );
+        console.log(updatedPhoneBookDEF);
+
+        // 8 - c 
+
+        const phoneBookABCArray = Array.from(phoneBookABC, ([key, value]) => ({ name: key, phone: value }));
+        const updatedPhoneBookABC = phoneBookABCArray.map(
+            (item) => {
+                return {...item, name: `${name}${item.name}`, phone: `${phone}${item.phone}`};
+            }
+        );
+        console.log(updatedPhoneBookABC);
+
+        // two versions - both work.. 
+
+        let carolineUpdateABC = [...updatedPhoneBookABC];
+        carolineUpdateABC = carolineUpdateABC.map(item => 
+            item.name === 'Name: Caroline' ? { ...item, phone: 'Phone: 049999999' } : item
+        );
+
+        console.log(carolineUpdateABC);
+
+        // phoneBookABC.set("Caroline", "0477888999")
+        // console.log(phoneBookABC);
+
+       // 8 - d
+
+       let printPhoneBook = function(obj) {
+        let string = '';
+
+        for (let prop in obj) {
+            if (typeof obj[prop] == 'string') {
+                string += prop + ': ' + obj[prop] + "; \n";
+            }
+            else {
+                string += prop + ': \n' + printPhoneBook(obj[prop]) + '\n';
+            }
+        }
+        return string; 
+    }
+    document.getElementById("Print-Q.d").innerText = printPhoneBook(updatedPhoneBookDEF);
+    document.getElementById("Print-Q.d.2").innerText = printPhoneBook(carolineUpdateABC);
+
+    // Tims 8- d
+    //     function printPhoneBook(contacts) {
+    //     phoneBookABC.forEach((value, key) => {
+    //         console.log(key, value);
+    //     })
+    // }
+    //         printPhoneBook();
+
+
+       // 8 - e
+
+       let phoneBook = [];
+
+       phoneBook.push(...updatedPhoneBookABC)
+       phoneBook.push(...carolineUpdateABC)
+
+       console.log(phoneBook)
+
+
+        
+        
+
+        
+    </script>
+</body>
+</html>
