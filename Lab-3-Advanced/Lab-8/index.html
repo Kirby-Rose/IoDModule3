@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 8</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 8</h1>
+    <script>
+      // a
+      function orderItems(...itemName) {
+        return `Order placed for: ${itemName.join(", ")}`;
+      }
+
+      function validateStringArg(fn) {
+        return function (...args) {
+          for (let arg of args)
+            if (typeof arg === "string") {
+              return fn(...args);
+            }
+          throw new Error("Erroneous action detected ");
+        };
+      }
+
+      // create a decorated version of the original function
+      const validatedOrderItem = validateStringArg(orderItems);
+      console.log(validatedOrderItem("Apple Watch"));
+      console.log(
+        validatedOrderItem("Ham Burger", "Fries", "Strawberry Milkshake")
+      );
+      console.log(validatedOrderItem(123));
+    </script>
+  </body>
+</html>

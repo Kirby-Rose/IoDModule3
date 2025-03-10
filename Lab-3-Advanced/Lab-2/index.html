@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 2</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 2</h1>
+
+    <div id="here-please"></div>
+
+    <button onClick="cancelTimer()">Are you too slow??</button>
+
+    <script>
+      // Class exercise
+      function printMessage(msg) {
+        const elementToUpdate = document.getElementById("here-please");
+        elementToUpdate.innerText = `You are... ${msg}`;
+        // console.log(`You are... ${msg}`)
+      }
+
+      // function to be executed, then milliseconds to delay, then arguments for function
+      let timerId = setTimeout(printMessage, 5000, "too slow mofo");
+
+      function cancelTimer() {
+        if (timerId) {
+          clearTimeout(timerId);
+        }
+      }
+
+      // Number 2 labs
+
+      const delayMsg = (msg) => {
+        console.log(`This message will be printed after a delay: ${msg}`);
+      };
+
+      let fifthTest = setTimeout(delayMsg, 1100, "#5 Long Delay");
+
+      setTimeout(delayMsg, 100, "#1: Delayed by 100ms");
+      setTimeout(delayMsg, 20, "#2: Delayed by 20ms");
+      setTimeout(delayMsg, 0, "#3: Delayed by 0ms");
+      delayMsg("#4: Not delayed at all");
+
+      clearTimeout(fifthTest, 1000);
+    </script>
+  </body>
+</html>

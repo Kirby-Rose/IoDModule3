@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 3</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 3 - Debounce</h1>
+
+    <div id="here-please"></div>
+
+    <button
+      onClick="debounceCallBack('How does it feel to waste your own time?')"
+    >
+      Click Me
+    </button>
+
+    <script>
+      function printMe(msg) {
+        const elementToUpdate = document.getElementById("here-please");
+        elementToUpdate.innerText = `Debouncing - a new concept: ${msg}`;
+        console.log(`Debouncing - a new concept: ${msg}`);
+      }
+
+      function debounce(func, delay) {
+        let timeout;
+
+        return function (...args) {
+          //...args here and below could be ${msg}
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func(...args), delay);
+        };
+      }
+
+      const debounceCallBack = debounce(printMe, 5000);
+
+      debounceCallBack("Got it yet?");
+
+      printMe = debounce(printMe, 10000, "is this correct?");
+    </script>
+  </body>
+</html>

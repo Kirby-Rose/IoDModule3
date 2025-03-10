@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 1</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 1</h1>
+
+    <div id="paste-answers-here"></div>
+    <script>
+      function makeCounter() {
+        let currentCount = 0;
+        let startFrom = 0;
+        let incrementBy = 0;
+
+        return function (number) {
+          console.log(currentCount);
+          currentCount++;
+          return currentCount;
+        };
+      }
+
+      function makeCounterB(startFrom) {
+        let currentCount = startFrom;
+
+        return function (number) {
+          console.log(currentCount);
+          currentCount++;
+          return currentCount;
+        };
+      }
+
+      function makeCounterC(startFrom, incrementBy) {
+        let currentCount = startFrom;
+
+        return function (number) {
+          console.log(currentCount);
+          currentCount += incrementBy;
+          return currentCount;
+        };
+      }
+
+      let counter1 = makeCounter();
+      let counter2 = makeCounterB(25);
+      let counter3 = makeCounterC(50, 25);
+
+      // a
+
+      function displayResults() {
+        let results = `
+             C1: ${counter1()} 
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+             C1: ${counter1()}
+
+             C2: ${counter2()}
+             C2: ${counter2()}
+             C2: ${counter2()}
+             C2: ${counter2()}
+             C2: ${counter2()}
+             C2: ${counter2()}
+
+             C3: ${counter3()}
+             C3: ${counter3()}
+             C3: ${counter3()}
+             C3: ${counter3()}
+             C3: ${counter3()}
+             C3: ${counter3()}
+             `;
+
+        document.getElementById("paste-answers-here").innerText =
+          "Practice makes improvement" + results;
+      }
+
+      displayResults();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 5</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 5</h1>
+
+    <script>
+      let car = {
+        make: "Porsche",
+        model: "911",
+        year: 1964,
+        description() {
+          console.log(
+            `This car is a ${this.make} ${this.model} from ${this.year}`
+          );
+        },
+      };
+      car.description(); //works
+
+      let delayCar = () => {
+        setTimeout(() => {
+          car.description();
+        }, 500);
+      };
+
+      delayCar.apply(car);
+
+      const carTwo = car;
+
+      carTwo.year = "2051";
+
+      const boundCar = car.description.bind(car);
+
+      setTimeout(boundCar, 2000);
+
+      const carThree = car;
+
+      carThree.make = "Holden";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 4</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 4 - Fibonacci</h1>
+
+    <div>
+      <ul id="fib-list"></ul>
+    </div>
+
+    <script>
+      //e.g. 1, 1, 2, 3, 5, 8, 13, 21, 34, etc.
+
+      const printFibonacci = (limit, ms = 1000) => {
+        const fibList = [1, 1];
+        let counter = 1;
+        let [first, second] = [1, 2];
+
+        return () => {
+          const printInterval = setInterval(() => {
+            let nextNumber = fibList[counter - 1] + fibList[counter];
+            fibList.push(nextNumber);
+            console.log(nextNumber);
+            counter++;
+            if (nextNumber >= limit) {
+              clearInterval(printInterval);
+            }
+          }, ms);
+        };
+        let x = createList();
+      };
+      let fibList = [];
+      const fibCountingOne = printFibonacci(250, 2000);
+      fibCountingOne([]);
+
+      //   const createList = (data) => {
+      //     var $ul,
+      //       container = document.getElementById("fib-list");
+      //     container.innerHTML = "";
+
+      //     const x = data.forEach((v, i) => {
+      //       // if (i >= cols * size) return false;
+      //       if (i % size === 0) $ul = document.createElement("ul");
+      //       const li = document.createElement("li");
+      //       li.innerHTML = v;
+      //       $ul.appendChild(li);
+      //       container.appendChild($ul);
+      //     });
+      //     data = fibList;
+      //     return createList;
+      //   };
+      //   createList(fibCountingOne);
+
+      //   const printToPage = () => createList(fibList, 5, 10);
+    </script>
+  </body>
+</html>

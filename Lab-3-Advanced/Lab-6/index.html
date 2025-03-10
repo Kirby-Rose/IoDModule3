@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced - Lab 6</title>
+  </head>
+  <body>
+    <h1>Welcome to JavaScript Advanced - Lab 6</h1>
+    <script>
+      function multiply(a, b) {
+        console.log(a * b);
+      }
+      multiply(5, 5);
+
+      Function.prototype.delay = function (ms) {
+        const fn = this;
+        return function (...args) {
+          setTimeout(() => fn.apply(this, args), ms);
+        };
+      };
+
+      multiply.delay(1000)(5, 5);
+
+      Function.prototype.delayTwo = function (ms) {
+        const fn = this;
+        return function () {
+          setTimeout(() => fn.apply(this, arguments), ms);
+        };
+      };
+
+      function multiplyFour(a, b, c, d) {
+        console.log(a * b * c * d);
+      }
+
+      multiplyFour.delayTwo(500)(5, 5, 5, 5);
+
+      function addFive(a, b, c, d, e) {
+        console.log(a + b + c + d + e);
+      }
+
+      addFive.delay(1000)(5, 5, 5, 5, 5);
+    </script>
+  </body>
+</html>
